@@ -103,6 +103,13 @@ public class PictureTester
 	  beach.mirrorDiagonal();
 	  beach.explore();
   }
+  public static void testMirrorWrong()
+  {
+	  Picture temple = new Picture("temple.jpg");
+	  temple.explore();
+	  temple.mirrorWrong();
+	  temple.explore();
+  }
   
   /** Main method for testing.  Every class can have a main
     * method in Java */
@@ -118,6 +125,8 @@ public class PictureTester
 //	  testMirrorVertical2();
 //	  testMirrorHorizontal();
 	  testMirrorDiagonal();
+	  
+//	  testMirrorWrong();
  //   testZeroBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();

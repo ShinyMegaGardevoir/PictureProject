@@ -162,10 +162,33 @@ public class Picture extends SimplePicture
 	  {
 		  for(int col = 0; col < pixels[0].length; col++)
 		  {
-			  if(row - col != 0 && row <= height && row < col)
+			  if(col - row != 0 && row < height && row <= col)
 			  {
 				  leftPixel = pixels[row][col];
-				  rightPixel = pixels[row][col];
+				  rightPixel = pixels[height - 1 - row][width - 1 - col];
+				  rightPixel.setColor(leftPixel.getColor());
+				  
+			  }
+			 
+		  }
+	  }
+  }
+  
+  public void mirrorWrong()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel rightPixel = null;
+	  Pixel leftPixel = null;
+	  int width = pixels[0].length;
+	  int height = pixels.length;
+	  for(int row = 0; row < pixels.length; row++)
+	  {
+		  for(int col = 0; col < pixels[0].length; col++)
+		  {
+			  if(col - row != 0 && row <= height && row <= col)
+			  {
+				  leftPixel = pixels[row][col];
+				  rightPixel = pixels[height - 1 - row][width - 1 - col];
 				  rightPixel.setColor(leftPixel.getColor());
 				  
 			  }
