@@ -162,7 +162,7 @@ public class Picture extends SimplePicture
 	  {
 		  for(int col = 0; col < pixels[0].length; col++)
 		  {
-			  if(col - row != 0 && row < height && row <= col)
+			  if(col - row != 0 && row < height && row >= col)
 			  {
 				  leftPixel = pixels[row][col];
 				  rightPixel = pixels[height - 1 - row][width - 1 - col];
