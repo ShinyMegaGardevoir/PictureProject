@@ -332,6 +332,33 @@ public class Picture extends SimplePicture
 	  }
   }
   
+  public void chromakey()
+  {
+	  Pixel [][] matrix = this.getPixels2D();
+	  Picture moon = new Picture("moon-surface.jpg");
+	  Pixel[][] matrix2 = moon.getPixels2D();
+	  for (int row = 0; row < matrix.length; row++)
+	  {
+		  for(int col = 0; col < matrix[0].length; col++)
+		  {
+			int currentRed, currentGreen, currentBlue;
+			currentRed = matrix[row][col].getRed();
+			currentGreen = matrix[row][col].getGreen();
+			currentBlue = matrix[row][col].getBlue();
+			 if(currentBlue > currentRed && currentBlue >= currentGreen)
+			 {
+			  	
+				 matrix[row][col].setBlue(matrix2[row][col].getBlue());
+				 matrix[row][col].setRed(matrix2[row][col].getRed());
+				 matrix[row][col].setGreen(matrix2[row][col].getGreen());
+			 }
+			
+			
+			  
+		  }
+	  }
+  }
+  
   public void grayscale()
   {
 	  Pixel[][] matrix = this.getPixels2D();

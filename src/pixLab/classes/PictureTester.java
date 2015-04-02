@@ -111,6 +111,25 @@ public class PictureTester
 	  temple.explore();
   }
   
+  public static void test5Filters()
+  {
+	  Picture beach = new Picture("beach.jpg");
+	  beach.explore();
+	  beach.mirrorWrong();
+	  beach.checkerboardFilter();
+	  beach.negate();
+	  beach.zeroBlue();
+	  beach.mirrorHorizontal();
+	  beach.explore();
+  }
+  
+  public static void testChromakey()
+  {
+	  Picture mark = new Picture("blue-mark.jpg");
+	  mark.explore();
+	  mark.chromakey();
+	  mark.explore();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -124,8 +143,9 @@ public class PictureTester
 //	  testMirrorVertical();
 //	  testMirrorVertical2();
 //	  testMirrorHorizontal();
-	  testMirrorDiagonal();
-	  
+//	  testMirrorDiagonal();
+//	  test5Filters();
+	  testChromakey();
 //	  testMirrorWrong();
  //   testZeroBlue();
     //testKeepOnlyBlue();
